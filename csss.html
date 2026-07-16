@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body{
+            background-color:lightblue;
+            font-family:Arial;
+        }
+
+        h2{
+            text-align:center;
+            color:darkblue;
+        }
+
+        form{
+            background-color:white;
+            Width:400px;b
+            margin:auto;
+            padding:20px;
+            border:2px solid black;
+            border-radius:10px;
+        }
+
+        input, select, textarea{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"]{
+            width:auto;
+        }
+
+        input[type="submit"]{
+            background-color:green;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        input[type="reset"]{
+            background-color:red;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter your full name">
+
+<label>Father's Name</label>
+<input type="text" placeholder="Enter father's name">
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email">
+
+<label>Password</label>
+<input type="password" placeholder="Enter password">
+
+<label>Mobile Number</label>
+<input type="tel" placeholder="Enter mobile number">
+
+<label>Date of Birth</label>
+<input type="date">
+
+<label>Age</label>
+<input type="number" placeholder="Enter age">
+
+<label>Gender</label><br>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+<br><br>
+
+<label>Select Course</label>
+<select>
+    <option>B.Tech</option>
+    <option>BCA</option>
+    <option>B.Sc</option>
+    <option>B.Com</option>
+    <option>MCA</option>
+</select>
+
+<label>Hobbies</label><br>
+<input type="checkbox"> Cricket
+<input type="checkbox"> Football
+<input type="checkbox"> Music
+<input type="checkbox"> Reading
+<br><br>
+
+<label>Upload Photo</label>
+<input type="file">
+
+<label>Address</label>
+<textarea rows="4" placeholder="Enter your address"></textarea>
+
+<input type="submit" value="Register">
+<input type="reset" value="Clear">
+
+</form>
+
+</body>
+</html> 
