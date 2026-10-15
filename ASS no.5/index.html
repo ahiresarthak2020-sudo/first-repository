@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Blocks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Click the Color Blocks!</h1>
+
+  <div class="container">
+    <div class="block red" onclick="moveBlock(this)"></div>
+    <div class="block blue" onclick="moveBlock(this)"></div>
+    <div class="block green" onclick="moveBlock(this)"></div>
+    <div class="block yellow" onclick="moveBlock(this)"></div>
+  </div>
+
+  <h2 id="message"></h2>
+
+  <script>
+    function moveBlock(block) {
+      block.classList.add("hidden");
+      document.getElementById("message").textContent = "Hii!!";
+    }
+  </script>
+</body>
+</html>

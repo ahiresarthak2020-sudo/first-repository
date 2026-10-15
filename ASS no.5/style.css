@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f1f5f9;
+  padding: 30px;
+}
+
+h1 {
+  color: #1e293b;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.block {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.red {
+  background: #ef4444;
+}
+
+.blue {
+  background: #3b82f6;
+}
+
+.green {
+  background: #22c55e;
+}
+
+.yellow {
+  background: #facc15;
+}
+
+.hidden {
+  transform: translateY(-200px) scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#message {
+  margin-top: 35px;
+  font-size: 42px;
+  color: #7c3aed;
+}
