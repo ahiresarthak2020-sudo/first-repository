@@ -1,74 +1,141 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple Calculator</title>
-</head>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #141e30, #243b55);
+        }
+
+        .container {
+            background: white;
+            padding: 35px;
+            width: 350px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #243b55;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            background: #243b55;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #141e30;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: red;
+        }
+
+        #homePage {
+            display: none;
+        }
+    </style>
+</head>
 <body>
 
-    <h1>Simple Calculator</h1>
+    <!-- Login Page -->
+    <div class="container" id="loginPage">
+        <h2>Login</h2>
 
-    <input type="number" id="num1" placeholder="Enter first number">
+        <form id="loginForm">
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter Username"
+                required
+            >
 
-    <br><br>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+                required
+            >
 
-    <input type="number" id="num2" placeholder="Enter second number">
+            <button type="submit">Login</button>
+        </form>
 
-    <br><br>
+        <p id="message"></p>
+    </div>
 
-    <button onclick="add()">Add</button>
-    <button onclick="subtract()">Subtract</button>
-    <button onclick="multiply()">Multiply</button>
-    <button onclick="divide()">Divide</button>
-
-    <h2 id="result">Result will appear here</h2>
-
+    <!-- Home Page -->
+    <div class="container" id="homePage">
+        <h2>Welcome!</h2>
+        <p id="welcomeMessage"></p>
+        <button onclick="logout()">Logout</button>
+    </div>
 
     <script>
+        const loginForm = document.getElementById("loginForm");
 
-        function add() {
+        loginForm.addEventListener("submit", function(event) {
+            event.preventDefault();
 
-            let a = Number(document.getElementById("num1").value);
-            let b = Number(document.getElementById("num2").value);
+            const username =
+                document.getElementById("username").value;
 
-            let result = a + b;
+            const password =
+                document.getElementById("password").value;
 
-            document.getElementById("result").innerHTML = result;
+            if (username === "admin" && password === "1234") {
+                document.getElementById("loginPage").style.display = "none";
+                document.getElementById("homePage").style.display = "block";
+
+                document.getElementById("welcomeMessage").textContent =
+                    "Hello, " + username + "! You have logged in successfully.";
+            } else {
+                document.getElementById("message").textContent =
+                    "Invalid username or password!";
+            }
+        });
+
+        function logout() {
+            document.getElementById("homePage").style.display = "none";
+            document.getElementById("loginPage").style.display = "block";
+
+            document.getElementById("loginForm").reset();
+            document.getElementById("message").textContent = "";
         }
-
-
-        function subtract() {
-
-            let a = Number(document.getElementById("num1").value);
-            let b = Number(document.getElementById("num2").value);
-
-            let result = a - b;
-
-            document.getElementById("result").innerHTML = result;
-        }
-
-
-        function multiply() {
-
-            let a = Number(document.getElementById("num1").value);
-            let b = Number(document.getElementById("num2").value);
-
-            let result = a * b;
-
-            document.getElementById("result").innerHTML = result;
-        }
-
-
-        function divide() {
-
-            let a = Number(document.getElementById("num1").value);
-            let b = Number(document.getElementById("num2").value);
-
-            let result = a / b;
-
-            document.getElementById("result").innerHTML = result;
-        }
-
     </script>
 
 </body>
